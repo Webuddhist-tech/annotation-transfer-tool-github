@@ -10,7 +10,7 @@ Each folder has four files:
 
 Load them in the app: Source <- source.txt, Target <- target.txt,
 Rules > Import <- rules.txt, then Transfer. Compare the After tab with
-expected.txt. "Load the sample pair" on the empty screen loads mini/.
+expected.txt. "Load the sample pair" on the empty screen loads tibetan/.
 
 
 mini/  (English, six lines)

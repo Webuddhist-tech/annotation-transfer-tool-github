@@ -57,21 +57,6 @@ Then import `transfer` from `fast-antx-js`. Relative imports in `packages/fast-a
 - Matches are counted as you type and highlighted in the source. **Transfer** (or Ctrl+Enter) fills the **After** tab. From there you can copy the result or download a `.txt` file. Markers that did not land are listed under the button.
 - The header switches between English and Tibetan, and between a stacked layout and a side-by-side layout. **Reset** clears the fields.
 
-## Host on GitHub
+## Hosting
 
-1. Create an empty GitHub repository.
-2. From this folder:
-
-```bash
-git init
-git add .
-git commit -m "Add the annotation transfer app"
-git branch -M main
-git remote add origin git@github.com:YOUR_USER/YOUR_REPO.git
-git push -u origin main
-```
-
-3. In the repository settings, open Pages and set the source to **GitHub Actions**.
-4. The workflow in `.github/workflows/pages.yml` publishes `web/dist` on every push to `main`.
-
-The Vite `base` is `./`, so the built files also work if you drop `web/dist` onto any static host.
+The website is hosted on GitHub Pages. The workflow in `.github/workflows/pages.yml` builds the site and publishes `web/dist` on every push to `main`.

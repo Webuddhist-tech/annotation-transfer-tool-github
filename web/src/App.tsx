@@ -40,7 +40,7 @@ const ANALYZE_DEBOUNCE_MS = 300;
 
 export function AnnotationTransferApp() {
   const { language, setLanguage } = useUiLanguage();
-  const [panelLayout, setPanelLayout] = useState<PanelLayout>("vertical");
+  const [panelLayout, setPanelLayout] = useState<PanelLayout>("horizontal");
   const labels = translations[language];
 
   const [sourceText, setSourceText] = useState("");

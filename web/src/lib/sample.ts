@@ -1,6 +1,6 @@
-import rulesRaw from "../../../samples/mini/rules.txt?raw";
-import sourceRaw from "../../../samples/mini/source.txt?raw";
-import targetRaw from "../../../samples/mini/target.txt?raw";
+import rulesRaw from "../../../samples/tibetan/rules.txt?raw";
+import sourceRaw from "../../../samples/tibetan/source.txt?raw";
+import targetRaw from "../../../samples/tibetan/target.txt?raw";
 
 import { parsePatternFile } from "@/lib/patterns";
 
