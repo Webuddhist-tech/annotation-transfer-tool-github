@@ -60,3 +60,4 @@ Then import `transfer` from `fast-antx-js`. Relative imports in `packages/fast-a
 ## Hosting
 
 The website is hosted on GitHub Pages. The workflow in `.github/workflows/pages.yml` builds the site and publishes `web/dist` on every push to `main`.
+ link https://webuddhist-tech.github.io/annotation-transfer-tool-github/
