@@ -1,0 +1,17 @@
+{
+  "name": "annotation-transfer",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Browser annotation transfer. A TypeScript port of fast-antx plus a web app.",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "web"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w web",
+    "build": "npm run build -w web",
+    "test": "npm run test -w fast-antx-js",
+    "preview": "npm run preview -w web"
+  }
+}

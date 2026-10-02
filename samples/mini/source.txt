@@ -1,0 +1,6 @@
+[1a]
+[1a.1]The quick brown fox {sic} jumps over
+[1a.2]the lazy dog. The dog did not
+[1b]
+[1b.1]mind at all, and went back
+[1b.2]to sleep in the sun.

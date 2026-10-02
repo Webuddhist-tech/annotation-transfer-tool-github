@@ -1,0 +1,65 @@
+Sample data for the Annotation Transfer Tool
+============================================
+
+Each folder has four files:
+
+  source.txt    the annotated text (markers inside)
+  target.txt    the plain text that should receive the markers
+  rules.txt     the rules, in the same JSON format Import and Export use
+  expected.txt  what the After tab should contain after you press Transfer
+
+Load them in the app: Source <- source.txt, Target <- target.txt,
+Rules > Import <- rules.txt, then Transfer. Compare the After tab with
+expected.txt. "Load the sample pair" on the empty screen loads mini/.
+
+
+mini/  (English, six lines)
+---------------------------
+
+  Rules: pages Keep, lines Keep, note Remove.
+
+  The source has page markers [1a] [1b], line markers [1a.1] ... and one
+  editor note {sic}. The target is the same sentence re-wrapped, with the
+  note gone and one typo ("bak").
+
+  What to look for:
+  - In the Source panel, markers are colored by rule; {sic} is struck
+    through because its rule is Remove.
+  - The Rules panel shows 2 matches for pages, 4 for lines, 1 for note.
+  - After Transfer, all six markers land inside the target lines and
+    {sic} is not copied. The typo stays, because the target is never
+    changed, only annotated.
+
+  Things to try:
+  - Delete the closing ) of the pages rule. The rule shows an error and
+    the Transfer bar says what to fix.
+  - Switch the note rule to Keep. {sic} is now copied into the result.
+  - Move the lines rule above pages. Counts stay the same here because
+    the two patterns never overlap. Now change pages to (\[[^\]]+\]) and
+    see lines drop to 0: the broader rule above it has already taken
+    every bracket.
+
+
+tibetan/  (real text, Karmashataka opening, from the engine test fixture)
+-------------------------------------------------------------------------
+
+  Rules: pages Keep, lines Remove.
+
+  The source is a page-and-line marked edition. The target is the same
+  passage with different line breaks and a few editorial marks (# and :)
+  that only exist in the target. expected.txt is byte-identical to the
+  fast-antx reference output for this pair.
+
+  What to look for:
+  - 3 page markers are kept and placed: [1a], [1b], [2a]. [2a] lands in
+    the middle of a target line, which is correct: the target wraps
+    differently.
+  - Line markers are struck through in the source and do not appear in
+    the result.
+
+  Things to try:
+  - Add a third rule, editor-note, pattern \{[^}]*\} as Remove. {D340}
+    gets struck through. The result changes by one character: [1b] now
+    sits one position earlier. This is the diff deciding differently
+    once {D340} is gone before the comparison, which is why the tool
+    says rules change the result.

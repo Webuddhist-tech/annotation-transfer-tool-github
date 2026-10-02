@@ -1,0 +1,32 @@
+{
+  "name": "fast-antx-js",
+  "version": "0.0.1",
+  "description": "Browser-compatible behavioral port of the fast-antx annotation transfer library",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "diff-match-patch": "1.0.5",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "sideEffects": false
+}
